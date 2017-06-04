@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @bucket.errors.any? %>
+  <% @bucket.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Bucket #<%= @bucket.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_bucket/<%= @bucket.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @bucket.user_id %>">
+      </div>
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @bucket.image %>">
+      </div>
+
+      <!-- Label and input for caption -->
+      <div class="form-group">
+        <label for="caption" class="control-label">
+          Caption
+        </label>
+
+        <textarea id="caption" name="caption" placeholder="Caption" class="form-control" rows="3"><%= @bucket.caption %></textarea>
+      </div>
+
+      <!-- Label and input for deadline -->
+      <div class="form-group">
+        <label for="deadline" class="control-label">
+          Deadline
+        </label>
+
+        <input type="text" id="deadline" name="deadline" placeholder="Deadline" class="form-control" value="<%= @bucket.deadline %>">
+      </div>
+
+      <!-- Label and input for image2 -->
+      <div class="form-group">
+        <label for="image2" class="control-label">
+          Image2
+        </label>
+
+        <input type="text" id="image2" name="image2" placeholder="Image2" class="form-control" value="<%= @bucket.image2 %>">
+      </div>
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @bucket.location %>">
+      </div>
+
+      <!-- Label and input for price_range -->
+      <div class="form-group">
+        <label for="price_range" class="control-label">
+          Price range
+        </label>
+
+        <input type="text" id="price_range" name="price_range" placeholder="Price range" class="form-control" value="<%= @bucket.price_range %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Bucket
+      </button>
+      or
+      <a href="/buckets/<%= @bucket.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

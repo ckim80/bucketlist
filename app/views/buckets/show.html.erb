@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Bucket #<%= @bucket.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @bucket.user_id %></dd>
+
+      <dt>Image</dt>
+      <dd><%= @bucket.image %></dd>
+
+      <dt>Caption</dt>
+      <dd><%= @bucket.caption %></dd>
+
+      <dt>Deadline</dt>
+      <dd><%= @bucket.deadline %></dd>
+
+      <dt>Image2</dt>
+      <dd><%= @bucket.image2 %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @bucket.location %></dd>
+
+      <dt>Price range</dt>
+      <dd><%= @bucket.price_range %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/buckets" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/buckets/<%= @bucket.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_bucket/<%= @bucket.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
