@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  Rails.application.routes.draw do
-        devise_for :users, controllers: {
+  devise_for :users, controllers: {
           sessions: 'users/sessions'
         }
 
-  # Routes for the Comment resource:
-  # root to: "home#index"
+  # Routes for the User resource:
+
+  root "buckets#landing"
 
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
@@ -57,6 +57,21 @@ Rails.application.routes.draw do
   # DELETE
   get "/delete_bucket/:id", :controller => "buckets", :action => "destroy"
   #------------------------------
+
+
+  # Read
+  get "/users", :controller => "users", :action => "index"
+  get "/users/:id", :controller => "users", :action => "show"
+
+  # likes
+  get "/users_like/:id", :controller => "users", :action => "users_like"
+
+  #users_unlike
+  get "/users_unlike/:id", :controller => "users", :action => "users_unlike"
+
+  #my_likes
+  get "/my_likes", :controller => "users", :action => "likes"
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
