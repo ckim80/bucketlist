@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/mailboxer/mailboxer.git
+  revision: ecf0e596bcaa32999efec52fa20054e6c18393ec
+  specs:
+    mailboxer (0.15.1)
+      carrierwave (>= 0.5.8)
+      rails (>= 5.0.0)
+
+GIT
   remote: https://github.com/raghubetina/starter_generators
   revision: 48fa7a4fbe4eb90ecfe05a133a7d7550167308f8
   specs:
@@ -58,6 +66,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.1.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     childprocess (0.7.0)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.2.0)
@@ -207,6 +219,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mailboxer!
   paperclip (~> 4.1)
   puma (~> 3.7)
   rails (~> 5.1.1)
