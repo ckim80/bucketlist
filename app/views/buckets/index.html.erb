@@ -30,9 +30,14 @@
         <td><%= bucket.price_range %></td>
         <td>
 
+        <% if current_user.username == bucket.user.username %>
           <a href="/buckets/<%= bucket.id %>" class="btn btn-primary">Show</a>
           <a href="/buckets/<%= bucket.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_bucket/<%= bucket.id %>" data-method="delete" class="btn btn-danger" rel="nofollow">Delete</a>
+        <% else %>
+        <a href="/buckets/<%= bucket.id %>" class="btn btn-primary">Show</a>
+        <% end %>
+        
 
         </td>
       </tr>
