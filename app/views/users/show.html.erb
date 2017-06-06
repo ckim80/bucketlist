@@ -27,13 +27,13 @@
       <div class="panel-body">
         <img src="<%= bucket.image %>" class="img-responsive" alt="Responsive image">
 
-
-  <% if bucket.fans.pluck(:user_id).include? current_user.id %>
+<!--
+  <% if bucket.likes.pluck(:user_id).include? current_user.id %>
   <a href="/users_unlike/<%= bucket.id %>">
     <i class="fa fa-heart"></i></a>
     <% else %>
     <a href="/users_like/<%= bucket.id %>">
-      <i class="fa fa-heart-o"></i></a>
+      <i class="fa fa-heart-o"></i>I like this bucket</a>
       <% end %>
 
       <ul class="media-list">
@@ -49,10 +49,10 @@
             <%= comment.body %>
           </div>
         </li>
-        <% end %>
+        <% end %> -->
 
 
-        <li class="media">
+        <!-- <li class="media">
           <div class="media-body">
             <form action="/create_comment" method="post">
               <input name="authenticity_token" type="hidden" value="form_authenticity_token">
@@ -61,8 +61,16 @@
 
               <div class="form-group">
                 <label for="body" class="sr-only">
+                  Body
                 </label>
+              <div class="input-group">
                 <input type="text" id="body" name="body" placeholder="Add a comment..." class="form-control" required>
+
+                <span class="input-group-btn">
+                  <button class="btn btn-default">
+                  <i class="fa fa-commenting-o"></i> -->
+                  </button>
+                </span>
               </div>
             </form>
           </div>

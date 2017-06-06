@@ -28,7 +28,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = current_user.id
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
-    @bucket.deadline = params[:deadline]
+    @bucket.deadline = Date.parse params[:deadline] rescue ''
     @bucket.image2 = params[:image2]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
@@ -54,7 +54,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = params[:user_id]
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
-    @bucket.deadline = params[:deadline]
+    @bucket.deadline = Date.parse params[:deadline] rescue ''
     @bucket.image2 = params[:image2]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
@@ -73,10 +73,6 @@ class BucketsController < ApplicationController
 
     @bucket.destroy
 
-    if URI(request.referer).path == "/buckets/#{@bucket.id}"
-      redirect_to("/", :notice => "Bucket deleted.")
-    else
-      redirect_to(:back, :notice => "Bucket deleted.")
-    end
+    redirect_to("buckets", :notice => "Bucket destroyed successfully.")
   end
 end

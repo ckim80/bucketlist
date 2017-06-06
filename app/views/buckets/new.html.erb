@@ -20,11 +20,8 @@
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for image -->
@@ -78,7 +75,14 @@
           Price range
         </label>
 
-        <input type="text" id="price_range" name="price_range" placeholder="Price range" class="form-control" value="<%= @bucket.price_range %>">
+        <select id="price_range" name="price_range" class="form-control">
+          <option value="100-200">$100-200</option>
+          <option value="200-300">$200-300</option>
+          <option value="300-400">$300-400</option>
+          <option value="400-500">$400-500</option>
+          <option value="500+">$500+</option>
+        </select>
+
       </div>
 
       <button class="btn btn-success">

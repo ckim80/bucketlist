@@ -4,31 +4,38 @@
 <div class="container">
       <div class="row">
           <div class="col-md-offset-1 col-md-10">
-          <img src="assets/images/hero.png" class="img-responsive">
+          <img src="/hero.png" class="img-responsive">
           </div>
       </div>
       <div class="row">
           <div class="col-md-offset-1 col-md-10">
-            <h1>
-            Find your ultimate bucketlist
-            </h1>
-            <p>
-            Discover your bucketlist and plan your dreams
-            </p>
+            <h2>
+            <P ALIGN=CENTER>
+            <font face="vendana">Discover your bucketlist and plan your dreams</font>
+            </h2>
+            </P>
+            <hr>
           </div>
 
-            </form>
-            <button type="button" class="btn btn-primary btn-block">Sign up<a href ="users/sign_up"> for free</a>
-            </button>
-            <hr>
-            <button type="button" class="btn btn-primary btn-block">
-              <i class="fa fa-google" aria-hidden="true"></i>  Sign up for free with Google
-            </button>
+          <% if current_user != nil %>
+          <hr>
+          <% else %>
+          <div class="col-md-offset-1 col-md-10">
+          <button type="button" class="btn btn-primary btn-block">Sign up<a href ="users/sign_up"> for free</a>
+          </button>
+          <hr>
+          <button type="button" class="btn btn-primary btn-block">
+            <i class="fa fa-google" aria-hidden="true"></i>  Sign up for free with Google
+          </button>
           </div>
+          <% end %>
+
+
       </div>
 
+      <br>
 
-      <div class="margin-above-top-lg {
+      <div class="margin-above-top-md {
         margin-top: 150px;
       }">
       </div>
@@ -43,18 +50,18 @@
           </p>
         </div>
         <div class="col-md-offset-2 col-md-4">
-          <img src="assets/images/planning.jpg" width="95%" height="95%" />
+          <img src="/planning.jpg" width="95%" height="95%" />
         </div>
       </div>
 
-    <div class="margin-above-top-lg {
+    <div class="margin-above-top-md {
         margin-top: 150px;
       }">
     </div>
-
+    <br>
       <div class="row">
         <div class="col-md-offset-1 col-md-4">
-          <img src="assets/images/cruise.jpg" width="95%" height="95%" />
+          <img src="/cruise.jpg" width="95%" height="95%" />
         </div>
         <div class="col-md-offset-2 col-md-4">
           <h2>
@@ -65,6 +72,7 @@
           </p>
         </div>
       </div>
+        <hr>
         <div class="margin-above-top-md {
            margin-top: 150px;
           }">
@@ -97,6 +105,7 @@
         margin-top: 150px;
        }">
      </div>
+  </div>
 
 </body>
 </html>

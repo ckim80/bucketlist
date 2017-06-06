@@ -42,7 +42,7 @@
         <ul class="nav navbar-nav">
           <% if current_user != nil %>
          <li><a href="/users"><i class="fa fa-fw fa-users"></i><span class="hidden-sm">All Users</span></a></li>
-         <li><a href="/buckets"><i class="fa fa-fw fa-file-photo-o"></i>All Posts</a></li>
+         <li><a href="/buckets"><i class="fa fa-fw fa-file-photo-o"></i>All Buckets</a></li>
          <li><a href="/my_likes"><i class="fa fa-fw fa-heart"></i>My Likes</a></li>
          <li><a href="/users/<%= current_user.id %>"><i class="fa fa-fw fa-user"></i>My Wall</a></li>
          <% else %>
@@ -55,7 +55,7 @@
 
         <ul class="nav navbar-nav navbar-right">
           <% if current_user != nil %>
-          <li><a href="/users/edit"><i class="fa fa-fw fa-edit"></i> <%= current_user.username %></a></li>
+          <li><a href="/users/edit"><i class="fa fa-fw fa-edit"></i> Edit <%= current_user.username %>'s Profile</a></li>
           <li><a href="/users/sign_out" data-method="delete" rel="nofollow"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a></li>
           <% else %>
           <li><a href="/users/sign_in">Sign In</a></li>

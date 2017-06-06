@@ -21,17 +21,19 @@
 
       <% @buckets.each do |bucket| %>
       <tr>
-        <td><%= bucket.user_id %></td>
-        <td><%= bucket.image %></td>
+        <td><%= bucket.user.username %></td>
+        <td><img src="<%= bucket.image %>" width="100"></td>
         <td><%= bucket.caption %></td>
         <td><%= bucket.deadline %></td>
         <td><%= bucket.image2 %></td>
         <td><%= bucket.location %></td>
         <td><%= bucket.price_range %></td>
         <td>
+
           <a href="/buckets/<%= bucket.id %>" class="btn btn-primary">Show</a>
           <a href="/buckets/<%= bucket.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_bucket/<%= bucket.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/delete_bucket/<%= bucket.id %>" data-method="delete" class="btn btn-danger" rel="nofollow">Delete</a>
+
         </td>
       </tr>
       <% end %>

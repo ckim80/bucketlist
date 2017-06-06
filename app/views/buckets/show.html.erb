@@ -6,10 +6,10 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @bucket.user_id %></dd>
+      <dd><%= @bucket.user.username %></dd>
 
       <dt>Image</dt>
-      <dd><%= @bucket.image %></dd>
+      <dd><img src="<%= @bucket.image %>" width="95%" height="95%" </dd>
 
       <dt>Caption</dt>
       <dd><%= @bucket.caption %></dd>
@@ -26,6 +26,31 @@
       <dt>Price range</dt>
       <dd><%= @bucket.price_range %></dd>
 
+      <dd><% if @bucket.likes.pluck(:user_id).include? current_user.id %>
+      <a href="/users_unlike/<%= @bucket.id %>">
+        <i class="fa fa-heart"></i></a>
+        <% else %>
+        <a href="/users_like/<%= @bucket.id %>">
+          <i class="fa fa-heart-o"></i>I like this bucket</a>
+          <% end %>
+      </dd>
+      <li class="media">
+        <div class="media-body">
+          <form action="/create_comment" method="post">
+            <input name="authenticity_token" type="hidden" value="form_authenticity_token">
+            <input type="hidden" name="bucket_id" value="<%= @bucket.id %>">
+            <input type="hidden" name="user_id" value="<%= @bucket.user_id %>">
+
+            <div class="form-group">
+              <label for="body" class="sr-only">
+                Body
+              </label>
+            <div class="input-group">
+              <input type="text" id="body" name="body" placeholder="Add a comment..." class="form-control" required>
+
+              <span class="input-group-btn">
+                <button class="btn btn-default">
+                <i class="fa fa-commenting-o"></i>
     </dl>
 
     <div class="btn-group btn-group-justified">

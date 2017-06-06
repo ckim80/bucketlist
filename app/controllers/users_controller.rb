@@ -18,10 +18,12 @@ class UsersController < ApplicationController
     @likes = @user.likes
 
   render("users/my_likes.html.erb")
+  end
 
   def users_unlike
     @likes = Like.where(:user_id => current_user.id, :bucket_id => params[:id])
     @likes.destroy_all
 
     redirect_to("/users/"+current_user.id.to_s)
+  end
 end

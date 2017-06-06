@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-          sessions: 'users/sessions'
-        }
-
   # Routes for the User resource:
 
   root "buckets#landing"
@@ -58,6 +54,10 @@ Rails.application.routes.draw do
   get "/delete_bucket/:id", :controller => "buckets", :action => "destroy"
   #------------------------------
 
+  devise_for :users
+  # devise_for :users, controllers: {
+  #         sessions: 'users/sessions'
+  #       }
 
   # Read
   get "/users", :controller => "users", :action => "index"
