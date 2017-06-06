@@ -26,4 +26,6 @@ class UsersController < ApplicationController
 
     redirect_to("/users/"+current_user.id.to_s)
   end
+
+
 end

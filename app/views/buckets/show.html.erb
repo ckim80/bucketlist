@@ -26,14 +26,23 @@
       <dt>Price range</dt>
       <dd><%= @bucket.price_range %></dd>
 
-      <dd><% if @bucket.likes.pluck(:user_id).include? current_user.id %>
-      <a href="/users_unlike/<%= @bucket.id %>">
-        <i class="fa fa-heart"></i></a>
-        <% else %>
-        <a href="/users_like/<%= @bucket.id %>">
-          <i class="fa fa-heart-o"></i>I like this bucket</a>
-          <% end %>
-      </dd>
+      <p>
+        <form action="/create_like" method="post">
+        <!-- Hidden input for authenticity token to protect from forgery -->
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+            <input type="hidden" name="bucket_id" value="<%= @bucket.id %>">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">              <button class="btn btn-link">
+                <i class="fa fa-heart-o"></i>
+            </button>
+                <% if @bucket.likes.count == 0 %>
+                <small class="text-muted">be the first to like this</small>
+                <% else %>
+                <% @bucket.likes.each do |like| %>
+                <small class="text-muted"><%= like.user.username %> like this</small>
+                <% end %>
+                <% end %>
+              </form>
+          </p>
       <li class="media">
         <div class="media-body">
           <form action="/create_comment" method="post">

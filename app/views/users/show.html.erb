@@ -27,6 +27,20 @@
       <div class="panel-body">
         <img src="<%= bucket.image %>" class="img-responsive" alt="Responsive image">
 
+        <dt>Caption</dt>
+        <dd><%= bucket.caption %></dd>
+
+        <dt>Deadline</dt>
+        <dd><%= bucket.deadline %></dd>
+
+        <dt>Image2</dt>
+        <dd><%= bucket.image2 %></dd>
+
+        <dt>Location</dt>
+        <dd><%= bucket.location %></dd>
+
+        <dt>Price range</dt>
+        <dd><%= bucket.price_range %></dd>
 <!--
   <% if bucket.likes.pluck(:user_id).include? current_user.id %>
   <a href="/users_unlike/<%= bucket.id %>">

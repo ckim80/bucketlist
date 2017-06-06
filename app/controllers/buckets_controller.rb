@@ -73,6 +73,6 @@ class BucketsController < ApplicationController
 
     @bucket.destroy
 
-    redirect_to("buckets", :notice => "Bucket destroyed successfully.")
+    redirect_to("/buckets", :notice => "Bucket deleted.")
   end
 end
