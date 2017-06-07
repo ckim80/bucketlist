@@ -17,8 +17,8 @@
       <dt>Deadline</dt>
       <dd><%= @bucket.deadline %></dd>
 
-      <dt>Image2</dt>
-      <dd><%= @bucket.image2 %></dd>
+      <dt>body</dt>
+      <dd><%= @bucket.body %></dd>
 
       <dt>Location</dt>
       <dd><%= @bucket.location %></dd>
@@ -31,7 +31,8 @@
         <!-- Hidden input for authenticity token to protect from forgery -->
           <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
             <input type="hidden" name="bucket_id" value="<%= @bucket.id %>">
-            <input type="hidden" name="user_id" value="<%= current_user.id %>">              <button class="btn btn-link">
+            <input type="hidden" name="user_id" value="<%= current_user.id %>">
+            <button class="btn btn-link">
                 <i class="fa fa-heart-o"></i>
             </button>
                 <% if @bucket.likes.count == 0 %>
@@ -40,6 +41,7 @@
                 <% @bucket.likes.each do |like| %>
                 <small class="text-muted"><%= like.user.username %> like this</small>
                 <% end %>
+
                 <% end %>
               </form>
           </p>

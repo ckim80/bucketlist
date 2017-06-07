@@ -28,7 +28,7 @@ class LikesController < ApplicationController
     if save_status == true
       redirect_to("/buckets", :notice => "Like created successfully.")
     else
-      render("likes/new.html.erb")
+      redirect_to("/buckets/"+params[:bucket_id], :notice => "You already liked this bucket.")
     end
   end
 

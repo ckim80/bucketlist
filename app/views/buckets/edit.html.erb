@@ -54,13 +54,13 @@
         <input type="text" id="deadline" name="deadline" placeholder="Deadline" class="form-control" value="<%= @bucket.deadline %>">
       </div>
 
-      <!-- Label and input for image2 -->
+      <!-- Label and input for body -->
       <div class="form-group">
-        <label for="image2" class="control-label">
-          Image2
+        <label for="body" class="control-label">
+          body
         </label>
 
-        <input type="text" id="image2" name="image2" placeholder="Image2" class="form-control" value="<%= @bucket.image2 %>">
+        <input type="text" id="body" name="body" placeholder="Body" class="form-control" value="<%= @bucket.body %>">
       </div>
 
       <!-- Label and input for location -->
@@ -78,7 +78,13 @@
           Price range
         </label>
 
-        <input type="text" id="price_range" name="price_range" placeholder="Price range" class="form-control" value="<%= @bucket.price_range %>">
+        <select id="price_range" name="price_range" class="form-control">
+          <option value="100-200">$100-200</option>
+          <option value="200-300">$200-300</option>
+          <option value="300-400">$300-400</option>
+          <option value="400-500">$400-500</option>
+          <option value="500+">$500+</option>
+        </select>
       </div>
 
       <button class="btn btn-warning">

@@ -5,6 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'chosen-rails'
+
+gem 'will_paginate'
+
+gem 'bootstrap-will_paginate'
+
+gem 'gravatar_image_tag'
+
 gem 'paperclip', '~> 4.1'
 
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
