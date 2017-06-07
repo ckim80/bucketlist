@@ -32,7 +32,7 @@ class BucketsController < ApplicationController
     @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
-    @bucket.complete = params[:complete]
+    @bucket.done = params[:done]
 
 
     save_status = @bucket.save
@@ -61,7 +61,7 @@ class BucketsController < ApplicationController
     @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
-    @bucket.complete = params[:complete]
+    @bucket.done = params[:done]
 
     save_status = @bucket.save
 
