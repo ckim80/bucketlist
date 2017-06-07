@@ -29,9 +29,11 @@ class BucketsController < ApplicationController
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
     @bucket.deadline = Date.parse params[:deadline] rescue ''
-    @bucket.image2 = params[:image2]
+    @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
+    @bucket.complete = params[:complete]
+
 
     save_status = @bucket.save
 
@@ -52,12 +54,14 @@ class BucketsController < ApplicationController
     @bucket = Bucket.find(params[:id])
 
     @bucket.user_id = params[:user_id]
+    @bucket.user_id = current_user.id
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
     @bucket.deadline = Date.parse params[:deadline] rescue ''
-    @bucket.image2 = params[:image2]
+    @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
+    @bucket.complete = params[:complete]
 
     save_status = @bucket.save
 

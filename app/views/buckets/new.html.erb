@@ -84,8 +84,17 @@
         </select>
       </div>
 
-      <!-- Label and input for complete -->
-      <input type="text" id="complete" name="complete" placeholder="Complete" class="form-control" value="<%= @bucket.complete %>">
+      <!-- Label and input for done -->
+      <div class="form-group">
+      <label for="price_range" class="control-label">
+          Done
+      </label>
+
+      <select id="done" name="done" class="form-control">
+        <option value="No">No</option>
+        <option value="Yes">Yes</option>
+      </select>
+      </div>
 
       <button class="btn btn-success">
         Create Bucket
