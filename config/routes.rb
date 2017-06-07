@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   post "/update_bucket/:id", :controller => "buckets", :action => "update"
 
   # DELETE
-  get "/delete_bucket/:id", :controller => "buckets", :action => "destroy"
+  delete "/delete_bucket/:id", :controller => "buckets", :action => "destroy"
   #------------------------------
 
   devise_for :users

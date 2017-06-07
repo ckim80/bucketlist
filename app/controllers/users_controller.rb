@@ -8,14 +8,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @buckets = @user.buckets
+    @buckets = @user.buckets.order("created_at desc")
 
     render("users/show.html.erb")
   end
 
   def likes
     @user = current_user
-    @likes = @user.likes
+    @likes = @user.likes.order("created_at desc")
 
   render("users/my_likes.html.erb")
   end

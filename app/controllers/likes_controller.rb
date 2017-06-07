@@ -12,7 +12,7 @@ class LikesController < ApplicationController
   end
 
   def new
-    @like = Like.new
+    @like = Like.new.order("likes.created_at desc")
 
     render("likes/new.html.erb")
   end

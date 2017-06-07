@@ -4,7 +4,7 @@ class BucketsController < ApplicationController
   end
 
   def index
-    @buckets = Bucket.all
+    @buckets = Bucket.all.order("buckets.created_at desc")
 
     render("buckets/index.html.erb")
   end

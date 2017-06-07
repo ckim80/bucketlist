@@ -8,12 +8,28 @@
         <h3 class="panel-title">
           <%= like.bucket.caption %>
         </h3>
+        <small>
+          <%= time_ago_in_words(like.bucket.created_at) %> ago
+        </small>
       </div>
+
 
       <div class="panel-body">
         <tr>
           <td><img src="<%= like.bucket.image %>" width=480></td>
         </tr>
+
+        <dt>Deadline</dt>
+        <dd><%= like.bucket.deadline %></dd>
+
+        <dt>Image2</dt>
+        <dd><%= like.bucket.image2 %></dd>
+
+        <dt>Location</dt>
+        <dd><%= like.bucket.location %></dd>
+
+        <dt>Price range</dt>
+        <dd><%= like.bucket.price_range %></dd>
       </div>
     </div>
   </div>
