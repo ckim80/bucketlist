@@ -48,8 +48,16 @@
           Deadline
         </label>
 
-        <input type="text" id="deadline" name="deadline" placeholder="Deadline" class="form-control" value="<%= @bucket.deadline %>">
+        <div class='input-group date' id='datetimepicker1'>
+        <input type='text' class="form-control" name="deadline" id="deadline">
+          <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+
       </div>
+
+
 
       <!-- Label and input for image2 -->
       <div class="form-group">
@@ -104,3 +112,13 @@
     </form>
   </div>
 </div>
+
+
+
+
+
+<script type="text/javascript">
+  $(function () {
+    $('#datetimepicker1').datetimepicker();
+  });
+</script>

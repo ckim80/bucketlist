@@ -28,7 +28,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = current_user.id
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
-    @bucket.deadline = Date.parse params[:deadline] rescue ''
+    @bucket.deadline = Chronic.parse params[:deadline]
     @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]
@@ -57,7 +57,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = current_user.id
     @bucket.image = params[:image]
     @bucket.caption = params[:caption]
-    @bucket.deadline = Date.parse params[:deadline] rescue ''
+    @bucket.deadline = Chronic.parse params[:deadline]
     @bucket.body = params[:body]
     @bucket.location = params[:location]
     @bucket.price_range = params[:price_range]

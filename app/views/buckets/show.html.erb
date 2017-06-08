@@ -38,6 +38,7 @@
             <button class="btn btn-link">
                 <i class="fa fa-heart-o"></i>
             </button>
+
                 <% if @bucket.likes.count == 0 %>
                 <small class="text-muted">be the first to like this</small>
                 <% else %>
@@ -48,6 +49,21 @@
                 <% end %>
               </form>
           </p>
+
+     <ul class="media-list">
+          <% @bucket.comments.each do |comment| %>
+         <li class="media">
+           <div class="media-body">
+             <h6 class="media-heading">
+               <a href="/users/<%= @bucket.user_id %>"><%= comment.user.username %></a>
+               <small><%= time_ago_in_words(Time.now) %>
+               </small>
+             </h6>
+             <%= comment.body %>
+           </div>
+         </li>
+         <% end %>
+
       <li class="media">
         <div class="media-body">
           <form action="/create_comment" method="post">
@@ -65,7 +81,7 @@
               <span class="input-group-btn">
                 <button class="btn btn-default">
                 <i class="fa fa-commenting-o"></i>
-                
+
     </dl>
 
     <div class="btn-group btn-group-justified">
