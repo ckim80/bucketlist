@@ -4,7 +4,10 @@ class BucketsController < ApplicationController
   end
 
   def index
-    @buckets = Bucket.all.order("buckets.created_at desc")
+    @q = Bucket.ransack(params[:q])
+    @buckets = @q.result(distinct: true).order("created_at desc")
+
+    # Bucket.all.order("buckets.created_at desc")
 
     render("buckets/index.html.erb")
   end
@@ -27,6 +30,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = params[:user_id]
     @bucket.user_id = current_user.id
     @bucket.image = params[:image]
+    @bucket.category = params[:category]
     @bucket.caption = params[:caption]
     @bucket.deadline = Chronic.parse params[:deadline]
     @bucket.body = params[:body]
@@ -56,6 +60,7 @@ class BucketsController < ApplicationController
     @bucket.user_id = params[:user_id]
     @bucket.user_id = current_user.id
     @bucket.image = params[:image]
+    @bucket.category = params[:category]
     @bucket.caption = params[:caption]
     @bucket.deadline = Chronic.parse params[:deadline]
     @bucket.body = params[:body]

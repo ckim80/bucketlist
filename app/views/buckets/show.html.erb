@@ -11,6 +11,9 @@
       <dt>Image</dt>
       <dd><img src="<%= @bucket.image %>" width="95%" height="95%" </dd>
 
+      <dt>Category</dt>
+      <dd><%= @bucket.category %></dd>
+      
       <dt>Caption</dt>
       <dd><%= @bucket.caption %></dd>
 
@@ -43,9 +46,10 @@
                 <small class="text-muted">be the first to like this</small>
                 <% else %>
                 <% @bucket.likes.each do |like| %>
-                <small class="text-muted"><%= like.user.username %> like this</small>
+                <small class="text-muted"><%= like.user.username %> like this     <small><%= time_ago_in_words(Time.now) %></small>
                 <% end %>
 
+                                </small>
                 <% end %>
               </form>
           </p>

@@ -33,6 +33,24 @@
         <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @bucket.image %>">
       </div>
 
+
+      <!-- Label and input for category -->
+      <div class="form-group">
+        <label for="category" class="control-label">
+          Category
+        </label>
+
+        <select id="category" name="category" class="form-control">
+          <option value="Travel">Travel</option>
+          <option value="Theater & Show">Theater & Show</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="New Skills">New Skills</option>
+          <option value="History">History</option>
+          <option value="Nature">Nature</option>
+          <option value="Food">Food</option>
+        </select>
+      </div>
+
       <!-- Label and input for caption -->
       <div class="form-group">
         <label for="caption" class="control-label">
@@ -51,15 +69,12 @@
         <div class='input-group date' id='datetimepicker1'>
         <input type='text' class="form-control" name="deadline" id="deadline">
           <span class="input-group-addon">
-          <span class="glyphicon glyphicon-calendar"></span>
+            <span class="glyphicon glyphicon-calendar"></span>
           </span>
         </div>
 
       </div>
 
-
-
-      <!-- Label and input for image2 -->
       <div class="form-group">
         <label for="body" class="control-label">
           Body

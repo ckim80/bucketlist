@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607033335) do
+ActiveRecord::Schema.define(version: 20170608054431) do
 
   create_table "buckets", force: :cascade do |t|
     t.integer "user_id"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20170607033335) do
     t.datetime "updated_at", null: false
     t.text "body"
     t.string "done"
+    t.string "category"
   end
 
   create_table "comments", force: :cascade do |t|
