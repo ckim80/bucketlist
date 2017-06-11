@@ -1,16 +1,16 @@
 <div class="page-header">
   <h1>
     Buckets
-    <a href="/buckets/new" class="btn btn-lg btn-success">New Bucket</a>
+    <a href="/buckets/new" class="btn btn-lg btn-success">Add Bucket</a>
   </h1>
 </div>
 
 <%= search_form_for @q do |f| %>
-<p class="lead">Narrow results:</p>
+<p class="lead">Narrow Results:</p>
 
 <div class="form-group">
 <%= f.label :category__cont, "Click on your prefered category" %>
-<%= f.select :category_cont, options_from_collection_for_select(Bucket.all, :category, :category, @q.category_cont), { :include_blank => true}, :class => "form-control" %>
+<%= f.select :category_cont, Bucket.all.pluck(:category).uniq, { :include_blank => true}, :class => "form-control" %>
 </div>
 
 <div class="row">

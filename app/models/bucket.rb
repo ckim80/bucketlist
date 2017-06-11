@@ -7,6 +7,10 @@ class Bucket < ApplicationRecord
 
   validates :user_id, :presence => true
 
-  validates :image, format: {with: /\.(png|jpg)\Z/i}
+  validates :image, format: {with: /\.(png|jpg|)\Z/i}
+
+  validates :category, :presence => true
+  validates :caption, :presence => true
+  validates :location, :presence => true
 
 end

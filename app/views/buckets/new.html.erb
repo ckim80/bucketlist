@@ -27,7 +27,7 @@
       <!-- Label and input for image -->
       <div class="form-group">
         <label for="image" class="control-label">
-          Image
+          Image (Paste image URL)
         </label>
 
         <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @bucket.image %>">
@@ -57,7 +57,7 @@
           Caption
         </label>
 
-        <textarea id="caption" name="caption" placeholder="Caption" class="form-control" rows="3"><%= @bucket.caption %></textarea>
+        <textarea id="caption" name="caption" placeholder="Caption" class="form-control"><%= @bucket.caption %></textarea>
       </div>
 
       <!-- Label and input for deadline -->
@@ -77,16 +77,16 @@
 
       <div class="form-group">
         <label for="body" class="control-label">
-          Body
+          Description
         </label>
 
-        <input type="text" id="body" name="body" placeholder="Body" class="form-control" value="<%= @bucket.body %>">
+        <input type="text" id="body" name="body" placeholder="Description" class="form-control" value="<%= @bucket.body %>">
       </div>
 
       <!-- Label and input for location -->
       <div class="form-group">
         <label for="location" class="control-label">
-          Location
+          Location (ex. Chicago, USA or Paris, France)
         </label>
 
         <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @bucket.location %>">
@@ -108,12 +108,9 @@
       </div>
 
       <!-- Label and input for done -->
-      <div class="form-group">
-      <label for="price_range" class="control-label">
-          Done
-      </label>
 
-      <select id="done" name="done" class="form-control">
+
+      <select option style="display:none;" id="done" name="done" class="form-control">
         <option value="No">No</option>
         <option value="Yes">Yes</option>
       </select>

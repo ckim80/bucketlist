@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @buckets = @user.buckets.order("created_at desc")
+    @buckets = @user.buckets.order("buckets.created_at desc")
 
     render("users/show.html.erb")
   end
